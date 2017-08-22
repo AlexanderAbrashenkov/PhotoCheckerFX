@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.2288135593220339, 0.8066255778120185" prefHeight="730.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="foto_verif.view.nst.NstLayoutController">
+      <items>
+          <AnchorPane maxWidth="320.0" minHeight="0.0" minWidth="300.0" prefHeight="160.0" prefWidth="320.0" SplitPane.resizableWithParent="false">
+              <children>
+                  <Label layoutX="23.0" layoutY="26.0" text="Область:" textOverrun="CLIP" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="12.0">
+                      <font>
+                          <Font name="System Bold" size="12.0" />
+                      </font>
+                  </Label>
+                  <TableView fx:id="addressTable" layoutY="120.0" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+                      <columns>
+                  <TableColumn fx:id="nameColumn" prefWidth="-1.0" text="Наименование ТТ" />
+                  <TableColumn fx:id="checkedColumn" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" text="..." />
+                      </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+                  </TableView>
+            <ChoiceBox fx:id="oblChoice" layoutX="100.0" layoutY="3.0" prefWidth="150.0" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="10.0" />
+            <Button layoutX="14.0" layoutY="78.0" mnemonicParsing="false" onAction="#loadNewObls" prefWidth="120.0" text="Добавить области" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="50.0" />
+            <Button layoutX="149.0" layoutY="78.0" mnemonicParsing="false" onAction="#removeObls" prefWidth="100.0" text="Удалить обл." AnchorPane.leftAnchor="169.0" AnchorPane.topAnchor="50.0" />
+            <Button layoutX="124.0" layoutY="80.0" mnemonicParsing="false" onAction="#load10Percents" prefWidth="40.0" text="10%" AnchorPane.leftAnchor="127.0" AnchorPane.topAnchor="50.0" />
+            <CheckBox fx:id="proxyCheckBox" layoutX="243.0" layoutY="14.0" mnemonicParsing="false" text="proxy" />
+            <Label layoutX="10.0" layoutY="84.0" text="Всего магазинов с фото:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="80.0" />
+            <Label layoutX="20.0" layoutY="94.0" text="Проверено:" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="80.0" />
+            <Label layoutX="180.0" layoutY="90.0" text="Проверено сегодня:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="98.0" />
+            <Label fx:id="statAll" layoutX="108.0" layoutY="80.0" AnchorPane.leftAnchor="147.0" AnchorPane.topAnchor="80.0" />
+            <Label fx:id="statChecked" layoutX="118.0" layoutY="90.0" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="80.0" />
+            <Label fx:id="statCheckedToday" layoutX="128.0" layoutY="100.0" AnchorPane.leftAnchor="127.0" AnchorPane.topAnchor="98.0" />
+            <Button layoutX="272.0" layoutY="50.0" mnemonicParsing="false" onAction="#prepareFileToUpload" prefHeight="25.0" prefWidth="29.0" text="+" AnchorPane.rightAnchor="1.0" />
+              </children>
+      </AnchorPane>
+      <SplitPane orientation="VERTICAL" prefHeight="900.0" prefWidth="160.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                        <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="356.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <content>
+                                <TilePane fx:id="tilePane" prefHeight="200.0" prefWidth="200.0">
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                </TilePane>
+                            </content>
+                        </ScrollPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <ScrollPane hbarPolicy="NEVER" maxWidth="240.0" minWidth="240.0" prefWidth="240.0">
+         <content>
+            <AnchorPane maxWidth="240.0" minHeight="0.0" minWidth="240.0" prefHeight="730.0" prefWidth="240.0">
+               <children>
+                  <Label text="Количество визитов:" textFill="#0327ee" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="7.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="visitCountChoiceBox" layoutX="79.0" layoutY="2.0" prefWidth="50.0" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="3.0" />
+                  <Separator layoutX="10.0" layoutY="210.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0" />
+                  <Label layoutX="77.0" layoutY="31.0" text="ТГ Майонез:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="35.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="noMatrixMZ" layoutX="136.0" layoutY="13.0" mnemonicParsing="false" text="нет ТГ" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="43.0" />
+                  <CheckBox fx:id="havePhotoMZ" layoutY="60.0" mnemonicParsing="false" text="Наличие фото" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="55.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="bordersPhotoMZ" disable="true" layoutX="15.0" layoutY="65.0" mnemonicParsing="false" text="Видны границы фото" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="75.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="vertPhotoMZ" disable="true" layoutX="4.0" layoutY="159.0" mnemonicParsing="false" text="верт. блок" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="95.0" />
+                  <CheckBox fx:id="_30PhotoMZ" disable="true" layoutX="4.0" layoutY="126.0" mnemonicParsing="false" text="30% полки" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="115.0" />
+                  <CheckBox fx:id="centerPhotoMZ" disable="true" layoutY="90.0" mnemonicParsing="false" text="по центру" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="135.0" />
+                  <Label layoutX="20.0" layoutY="495.0" style="-fx-font-weight: bold; -fx-font-size: 11;" text="Комментарий:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="155.0" />
+                  <TextField fx:id="textCommentMZ" layoutX="2.0" layoutY="140.0" prefWidth="170.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="170.0" />
+                  <ChoiceBox fx:id="commentMZ" layoutX="2.0" layoutY="141.0" prefWidth="15.0" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="170.0" />
+                  <Separator layoutX="11.0" layoutY="127.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0" />
+                  <Label layoutX="30.0" layoutY="15.0" text="ТГ Кетчуп + Соус:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="205.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="noMatrixKS" layoutX="136.0" layoutY="184.0" mnemonicParsing="false" text="нет ТГ" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="214.0" />
+                  <CheckBox fx:id="havePhotoKS" layoutX="15.0" layoutY="35.0" mnemonicParsing="false" text="Наличие фото" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="225.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="bordersPhotoKS" disable="true" layoutX="15.0" layoutY="90.0" mnemonicParsing="false" text="Видны границы фото" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="245.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="vertPhotoKS" disable="true" layoutX="15.0" layoutY="110.0" mnemonicParsing="false" text="верт. блок" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="265.0" />
+                  <CheckBox fx:id="_30PhotoKS" disable="true" layoutX="15.0" layoutY="85.0" mnemonicParsing="false" text="30% полки" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="285.0" />
+                  <CheckBox fx:id="centerPhotoKS" disable="true" layoutX="15.0" layoutY="60.0" mnemonicParsing="false" text="по центру" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="305.0" />
+                  <Label layoutX="20.0" layoutY="160.0" style="-fx-font-weight: bold; -fx-font-size: 11;" text="Комментарий:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="325.0" />
+                  <TextField fx:id="textCommentKS" layoutY="311.0" prefWidth="170.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="340.0" />
+                  <ChoiceBox fx:id="commentKS" layoutX="115.0" layoutY="310.0" prefWidth="15.0" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="340.0" />
+                  <Separator layoutX="10.0" layoutY="130.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="370.0" />
+                  <Label layoutX="30.0" layoutY="170.0" text="ТГ Масло:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="375.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="noMatrixM" layoutX="136.0" layoutY="354.0" mnemonicParsing="false" text="нет ТГ" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="384.0" />
+                  <CheckBox fx:id="havePhotoM" layoutX="15.0" layoutY="190.0" mnemonicParsing="false" text="Наличие фото" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="395.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="bordersPhotoM" disable="true" layoutX="15.0" layoutY="315.0" mnemonicParsing="false" text="Видны границы фото" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="415.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="vertPhotoM" disable="true" layoutX="15.0" layoutY="265.0" mnemonicParsing="false" text="верт. блок" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="435.0" />
+                  <CheckBox fx:id="centerPhotoM" disable="true" layoutX="15.0" layoutY="215.0" mnemonicParsing="false" text="по центру" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="455.0" />
+                  <Label layoutX="20.0" layoutY="305.0" style="-fx-font-weight: bold; -fx-font-size: 11;" text="Комментарий:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="475.0" />
+                  <TextField fx:id="textCommentM" layoutX="2.0" layoutY="461.0" prefWidth="170.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="490.0" />
+                  <ChoiceBox fx:id="commentM" layoutX="121.0" layoutY="460.0" prefWidth="15.0" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="490.0" />
+                  <Separator layoutX="10.0" layoutY="285.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="520.0" />
+                  <Button layoutX="60.0" layoutY="511.0" mnemonicParsing="false" onAction="#saveAddress" prefWidth="160.0" style="-fx-background-color: lightgreen; -fx-background-radius: 8; -fx-font-weight: bold; -fx-border-color: grey; -fx-border-radius: 8;" text="Сохранить" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="535.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="18.0" layoutY="438.0" mnemonicParsing="false" onAction="#clearCheckBoxes" prefWidth="160.0" style="-fx-background-color: coral; -fx-background-radius: 8; -fx-font-weight: bold; -fx-border-radius: 8; -fx-border-color: grey;" text="Очистить" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="570.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="changesSavedLabel" layoutX="30.0" layoutY="696.0" textFill="#00a41e" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="605.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      </items>
+  </SplitPane>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="530.0" maxWidth="230.0" minHeight="530.0" minWidth="0.0" prefHeight="530.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="foto_verif.view.dmp_nka.CriteriasLayoutControllerNka">
+        <children>
+            <Label layoutX="77.0" layoutY="31.0" style="-fx-font-weight: bold;" text="Корректность фото:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="5.0">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+      </Label>
+      <CheckBox fx:id="allOK" mnemonicParsing="false" text="все ОК" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="5.0" />
+            <CheckBox fx:id="correctPhoto" layoutY="60.0" mnemonicParsing="false" style="-fx-font-weight: normal;" text="Фото корректное" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="30.0" />
+      <CheckBox fx:id="hasKeyWord" layoutX="15.0" layoutY="65.0" mnemonicParsing="false" style="-fx-font-weight: normal;" text="Наличие кодового слова" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="55.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </CheckBox>
+            <Separator layoutX="11.0" layoutY="127.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0" />
+      <Label fx:id="productLabel" disable="true" layoutX="6.0" layoutY="129.0" style="-fx-font-weight: bold;" text="Наличие ТГ на ДМП:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="90.0" />
+      <CheckBox fx:id="prodMZ" disable="true" layoutX="15.0" layoutY="95.0" mnemonicParsing="false" style="-fx-font-weight: normal;" text="Майонез" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="115.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="prodK" disable="true" layoutX="25.0" layoutY="105.0" mnemonicParsing="false" style="-fx-font-weight: normal;" text="Кетчуп" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="140.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="prodLP" disable="true" layoutX="15.0" layoutY="205.0" mnemonicParsing="false" style="-fx-font-weight: normal;" text="Ласка Постный" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="165.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="prodS" disable="true" layoutX="35.0" layoutY="115.0" mnemonicParsing="false" style="-fx-font-weight: normal;" text="Соус" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="190.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </CheckBox>
+            <Separator layoutX="10.0" layoutY="130.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="240.0" />
+      <Label fx:id="criteriaLabel" disable="true" layoutX="6.0" layoutY="117.0" style="-fx-font-weight: bold;" text="Критерии оценки:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="250.0" />
+      <CheckBox fx:id="minSize" disable="true" layoutX="14.0" layoutY="222.0" mnemonicParsing="false" text="Соответствие мин. размеру" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="275.0" />
+      <CheckBox fx:id="tmaProd" disable="true" layoutX="15.0" layoutY="210.0" mnemonicParsing="false" text="Акционный продукт" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="300.0" />
+      <CheckBox fx:id="hasPrice" disable="true" layoutX="25.0" layoutY="220.0" mnemonicParsing="false" text="Наличие ценника" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="325.0" />
+      <CheckBox fx:id="filledOver80" disable="true" layoutX="35.0" layoutY="230.0" mnemonicParsing="false" text="Заполненность ДМП на 80%" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="350.0" />
+      <CheckBox fx:id="placeDMP" disable="true" layoutX="45.0" layoutY="240.0" mnemonicParsing="false" text="Место размещения" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="375.0" />
+            <Separator layoutX="10.0" layoutY="285.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="400.0" />
+      <Label layoutX="14.0" layoutY="516.0" style="-fx-font-weight: bold;" text="Комментарии:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="410.0" />
+      <TextArea fx:id="comment" layoutX="-80.0" layoutY="464.0" prefHeight="80.0" prefWidth="200.0" promptText="Замечания, комментарии, задачи" style="-fx-border-radius: 8; -fx-background-radius: 8; -fx-border-color: lightgrey;" wrapText="true" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="435.0" />
+      <CheckBox fx:id="dmpPechka" disable="true" layoutX="15.0" layoutY="200.0" mnemonicParsing="false" style="-fx-font-weight: normal;" text="ДМП Печка" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="215.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </CheckBox>
+        </children>
+</AnchorPane>

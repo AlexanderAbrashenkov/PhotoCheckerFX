@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="foto_verif.view.nst.OblDialogController">
+   <children>
+      <Label fx:id="titleLabel" layoutX="14.0" layoutY="14.0" text="">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="14.0" layoutY="41.0" prefHeight="509.0" prefWidth="375.0">
+         <content>
+            <VBox fx:id="vBox" prefHeight="200.0" prefWidth="370.0" />
+         </content></ScrollPane>
+      <Button layoutX="211.0" layoutY="561.0" mnemonicParsing="false" onAction="#buttonOkPressed" prefWidth="80.0" text="OK" />
+      <Button layoutX="306.0" layoutY="561.0" mnemonicParsing="false" onAction="#buttonCancelPressed" prefWidth="80.0" text="Cancel" />
+      <Button layoutX="14.0" layoutY="561.0" mnemonicParsing="false" onAction="#buttonClearPressed" text="Очистить" />
+      <Button fx:id="shuffleButton" layoutX="98.0" layoutY="561.0" mnemonicParsing="false" onAction="#shuffleObls" text="Выделить" visible="false" />
+   </children>
+</AnchorPane>

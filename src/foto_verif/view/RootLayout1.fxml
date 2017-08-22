@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="foto_verif.view.RootLayoutController1">
+   <children>
+        <AnchorPane prefHeight="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+            <Label layoutX="285.0" layoutY="22.0" text="Тип фото" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="12.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="photoType" layoutX="325.0" layoutY="20.0" prefWidth="150.0" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="10.0" />
+                <Label fx:id="netLabel" layoutX="27.0" layoutY="14.0" text="Сеть" visible="false" AnchorPane.leftAnchor="275.0" AnchorPane.topAnchor="12.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="27.0" layoutY="40.0" text="Дата фото с " AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="47.0">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+                <ChoiceBox fx:id="netChoice" layoutX="78.0" layoutY="2.0" prefWidth="150.0" visible="false" AnchorPane.leftAnchor="315.0" AnchorPane.topAnchor="10.0" />
+                <DatePicker fx:id="dateFrom" layoutX="93.0" layoutY="42.0" prefWidth="150.0" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="45.0" />
+                <Label layoutX="290.0" layoutY="48.0" text="по" AnchorPane.leftAnchor="280.0" AnchorPane.topAnchor="48.0">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+                <DatePicker fx:id="dateTo" layoutX="300.0" layoutY="45.0" prefWidth="150.0" AnchorPane.leftAnchor="315.0" AnchorPane.topAnchor="45.0" />
+                <Button layoutX="496.0" layoutY="28.0" mnemonicParsing="false" onAction="#loadDatas" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: skyblue; -fx-font-weight: bold; -fx-border-color: grey; -fx-border-radius: 10; -fx-background-radius: 10;" text="Загрузить фотографии" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="500.0" AnchorPane.topAnchor="15.0">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+                <Button layoutX="834.0" layoutY="28.0" mnemonicParsing="false" onAction="#makeExcelReport" prefWidth="200.0" style="-fx-background-color: lawngreen; -fx-background-radius: 8; -fx-font-weight: bold; -fx-border-color: grey; -fx-border-radius: 8; -fx-font-size: 12;" text="Сформировать отчет в Excel" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+                </Button>
+            <Label fx:id="errorLabel" layoutX="630.0" layoutY="24.0" textFill="RED" AnchorPane.topAnchor="50.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="clearAll" disable="true" layoutX="1013.0" layoutY="20.0" mnemonicParsing="false" onAction="#clearAllSaves" prefWidth="200.0" style="-fx-background-color: tomato; -fx-font-weight: bold; -fx-background-radius: 8; -fx-border-color: grey; -fx-border-radius: 8; -fx-font-size: 12;" text="Очистить все сохранения" visible="false" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="importTMA" layoutX="510.0" layoutY="25.0" mnemonicParsing="false" onAction="#importTMAFile" prefHeight="20.0" prefWidth="120.0" style="-fx-background-color: plum; -fx-font-weight: bold; -fx-border-color: grey; -fx-border-radius: 10; -fx-background-radius: 10; -fx-font-size: 12;" text="Импорт акций" textAlignment="CENTER" visible="false" wrapText="true" AnchorPane.leftAnchor="650.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="exportTMA" layoutX="660.0" layoutY="25.0" mnemonicParsing="false" onAction="#getTMATemplate" prefHeight="20.0" prefWidth="120.0" style="-fx-background-color: plum; -fx-border-color: grey; -fx-border-radius: 10; -fx-background-radius: 10; -fx-font-size: 12; -fx-font-weight: bold;" text="Выгрузить акции" textAlignment="CENTER" visible="false" wrapText="true" AnchorPane.leftAnchor="780.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="951.0" layoutY="24.0" mnemonicParsing="false" onAction="#showHelp" style="-fx-border-radius: 10;" text="Справка" visible="false" AnchorPane.leftAnchor="950.0" AnchorPane.topAnchor="10.0">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/help.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            </children>
+        </AnchorPane>
+      <AnchorPane fx:id="childPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0" />
+   </children>
+</AnchorPane>
